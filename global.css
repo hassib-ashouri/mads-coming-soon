@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --text-tiny-normal: Roboto;
+
+  /* font sizes */
+  --text-tiny-normal-size: 12px;
+  --font-size-base: 16px;
+  --text-medium-normal-size: 18px;
+
+  /* Colors */
+  --color-neutral-black: #000;
+  --text-alternate: #fff;
+  --color-neutral-neutral: #666;
+
+  /* Paddings */
+  --padding-xl: 20px;
+  --padding-base: 16px;
+}
