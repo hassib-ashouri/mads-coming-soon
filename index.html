@@ -10,6 +10,8 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
         />
+
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/42d18f8312abac7ca169d2ba3/696bd59d15701f875752b761d.js");</script>
     </head>
     <body>
         <div class="root">
@@ -37,64 +39,10 @@
                                     Be the first to know when MADS launches globally.
                                 </div>
                             </div>
-                            <div class="actions">
-                                <form class="form" id="emailForm">
-
-                                    <input
-                                    class="typedefault"
-                                    type="email"
-                                    name="email"
-                                    placeholder="Your Email Here"/>
-                                    <button
-                                        type="submit"
-                                        class="styleprimary-smallfalse-da"
-                                        id="submitEmail"
-                                        >Notify Me</button>
-
-
-                                </form>
-                                <div class="by-clicking-sign">
-                                    By signing up, you agree to our Terms and Conditions.
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
             </header>
         </div>
     </body>
-
-    <script>
-        let emailForm = document.getElementById("emailForm");
-        emailForm.addEventListener("submit", addEmail);
-
-        // add email to mailchimp
-        function addEmail(e) {
-            e.preventDefault();
-            let formData = new FormData(this);
-            let mailchimp = "0753226069c4bc6be1a93f53d9fadb52-us13";
-            let listId = "55551799c1";
-            let mailchimpApi = "https://us13.api.mailchimp.com/3.0/";
-            var data = {
-                email_address: formData.get("email")
-            };
-
-            fetch(mailchimpApi + "lists/" + listId + "/members", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer " + mailchimp
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Success:", data);
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-        }
-
-    </script>
 </html>
